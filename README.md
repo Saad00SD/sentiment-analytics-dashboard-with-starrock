@@ -131,3 +131,15 @@ curl -u root: \
 * Real-time reporting from StarRocks OLAP engine
 
 ---
+## Snapshots
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9063afb1-a5e8-4b9c-88f1-02b9ad75149c" />
+
+### Docker Desktop 
+<img width="1609" height="916" alt="image" src="https://github.com/user-attachments/assets/83c64705-4c43-4589-8472-08c3c6b27f5b" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e2f4713e-f612-43a5-939d-07a9937c7d75" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ff12c54c-3fcf-4491-bec3-90e4db3c5e39" />
+
+### MySQL
+![Uploading image.png…]()
+
+
