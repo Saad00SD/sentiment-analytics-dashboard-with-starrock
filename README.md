@@ -140,6 +140,7 @@ curl -u root: \
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ff12c54c-3fcf-4491-bec3-90e4db3c5e39" />
 
 ### MySQL
-![Uploading image.png…]()
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/27e5d045-9ff7-4cac-9ecc-00798e104283" />
+
 
 
