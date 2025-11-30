@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  starrocks-fe:
+    image: starrocks/fe-ubuntu:3.3-latest
+    container_name: starrocks-fe
+    hostname: starrocks-fe
+    user: root
+    command: >
+      bash -c "
+      ulimit -n 65535;
+      /opt/starrocks/fe/bin/start_fe.sh
+      "
+    environment:
+      - FE_SERVERS=starrocks-fe:9010
+    ports:
+      - "8030:8030"   # FE Web UI / Stream Load
+      - "9030:9030"   # MySQL
+      - "9010:9010"   # FE RPC
+    volumes:
+    - ./fe/meta:/opt/starrocks/fe/meta
+    networks:
+      star-net:
+
+  starrocks-be:
+    image: starrocks/be-ubuntu:3.3-latest
+    container_name: starrocks-be
+    hostname: starrocks-be
+    depends_on:
+      - starrocks-fe
+    command: >
+      bash -c "
+      ulimit -n 65535;
+      /opt/starrocks/be/bin/start_be.sh
+      "
+    environment:
+      - FE_SERVERS=starrocks-fe:9010
+    volumes:
+    - ./be/storage:/opt/starrocks/be/storage
+    ports:
+      - "9050:9050"   # BE heartbeat
+      - "9060:9060"   # BE query port (important)
+      - "8040:8040"   # BE web server
+      - "8060:8060"   # BE brpc port
+    networks:
+      star-net:
+
+networks:
+  star-net:
+    driver: bridge
